@@ -1,5 +1,7 @@
 import fs from 'fs'
+import { CsvFileReader } from './CsvFileReader'
 
-const matches = fs.readFileSync("assets/football.csv", { encoding: "utf-8" }).split("\n").map((row) => row.split(","))
+const reader = new CsvFileReader("assets/football.csv");
+const matches = reader.read()
 
 console.log(matches)
